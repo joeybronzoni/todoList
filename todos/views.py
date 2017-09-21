@@ -2,7 +2,6 @@
 from django.shortcuts import render
 #bring in the HttpResponse
 from django.http import HttpResponse
-
 #bring in the models
 from .models import Todo
 
@@ -11,17 +10,17 @@ from .models import Todo
 # when index is loaded give us the request object
 def index(request):
     todos = Todo.objects.all()[:10]
-
-    context = {
+   
+    lexicon = {
         'todos': todos
     }
     
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', lexicon)
 
 def details(request, id):
     todo = Todo.objects.get(id=id)
-    
-    context = {
+   
+    lexicon = {
         'todo': todo
     }
-    return render(request, 'details.html', context)
+    return render(request, 'details.html', lexicon)
