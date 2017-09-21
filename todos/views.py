@@ -24,3 +24,10 @@ def details(request, id):
         'todo': todo
     }
     return render(request, 'details.html', lexicon)
+
+def add(request):
+    if (request.method == "post"):
+        return
+    else:
+        return render(request, 'add.html')
+    
