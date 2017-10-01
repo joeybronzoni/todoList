@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'todolist',
-        'USER': 'root',
-
+        'USER': 'test',
+        'PASSWORD': 'test',
         'HOST': '',
         'PORT': ''
     }

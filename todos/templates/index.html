@@ -1,5 +1,5 @@
 {% include 'partials/header.html' %}
-      <ul>
+      <ul id="Todos">
        	  {% for todo in todos %}
 
 	  <li> <a href="/todos/details/{{todo.id}}"> {{todo.title}}</a> : {{todo.text}} </li>

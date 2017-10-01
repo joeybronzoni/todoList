@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #bring in the HttpResponse
 from django.http import HttpResponse
 #bring in the models
@@ -26,8 +26,14 @@ def details(request, id):
     return render(request, 'details.html', lexicon)
 
 def add(request):
-    if (request.method == "post"):
-        return
+    if (request.method == "POST"):
+        title = request.POST['title']
+        text = request.POST['text']
+
+        todo = Todo(title=title, text=text)
+        todo.save()
+
+        return redirect('/todos')
     else:
         return render(request, 'add.html')
     
